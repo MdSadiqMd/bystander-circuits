@@ -218,3 +218,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# project
+.cache/
+runs/
+cache/
+*.safetensors
+runs_smoke/
+runs_smoke_patched/

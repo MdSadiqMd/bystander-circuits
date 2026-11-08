@@ -1,0 +1,39 @@
+[project]
+name = "nothing-else-broke"
+version = "0.1.0"
+description = "Five-layer audit of an intervened language model (behavioural, safety, cross-lingual, mechanistic cross-circuit, hidden failures) scored with AuditKIT and re-judged with SafeTune"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Md.Sadiq", email = "mohammadsadiq4950@gmail.com" }]
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "aya-circuits",
+    "auditkit>=1.1.3",
+    "circuitkit==0.2.0",
+    "numpy",
+    "pandas",
+    "safetensors",
+    "safetune>=0.1.10",
+    "scipy",
+    "torch",
+]
+
+[dependency-groups]
+dev = ["pytest>=9.2.0", "ruff>=0.17.3"]
+
+[tool.uv.sources]
+aya-circuits = { path = "../tiny-aya-circuits", editable = true }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["neb"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM", "PERF", "NPY"]
