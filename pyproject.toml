@@ -10,6 +10,7 @@ dependencies = [
     "aya-circuits",
     "auditkit>=1.1.3",
     "circuitkit==0.2.0",
+    "einops",
     "numpy",
     "pandas",
     "safetensors",
@@ -36,4 +37,6 @@ line-length = 100
 target-version = "py312"
 
 [tool.ruff.lint]
-select = ["E", "F", "I", "B", "UP", "SIM", "PERF", "NPY"]
+select = ["E", "F", "I", "B", "UP", "SIM", "PERF", "NPY", "C4", "PIE", "FURB", "PLE", "T10", "RUF"]
+# en dashes, ×, − and Greek letters in strings and docstrings are intended
+ignore = ["RUF001", "RUF002", "RUF003"]
